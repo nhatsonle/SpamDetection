@@ -1,0 +1,20 @@
+# Môi trường ảo
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Dữ liệu lớn (nếu có)
+data/processed/
+
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Kết quả tạm/lớn
+results/trained_models/*.pkl
+results/trained_models/*.joblib
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
