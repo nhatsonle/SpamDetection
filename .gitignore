@@ -6,7 +6,7 @@ __pycache__/
 
 # Dữ liệu lớn (nếu có)
 data/processed/
-
+Data Science from Scratch- First Principles with Python.pdf
 
 # Notebook checkpoints
 .ipynb_checkpoints/
