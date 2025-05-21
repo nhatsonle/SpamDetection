@@ -1,5 +1,4 @@
 
-Dự án capstone môn học Nhập môn Trí tuệ nhân tạo nhằm xây dựng và so sánh các mô hình học máy để phân loại tin nhắn spam/ham.
 Capstone project for Introduction to Artificial Intelligence course in HUST.
 This project aims at building and comparing numerous Machine Learning models to classify spam/ham email.
 
