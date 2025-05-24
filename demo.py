@@ -42,10 +42,10 @@ def main():
             st.subheader("Kết quả:")
             
             # Hiển thị nhãn dự đoán với màu sắc
-            if probability > 0.3:
-                st.error("SPAM")
+            if prediction == 0:
+                st.markdown("<h3 style='color: green;'>Kết quả: HAM</h3>", unsafe_allow_html=True)
             else:
-                st.success("HAM")
+                st.markdown("<h3 style='color: red;'>Kết quả: SPAM</h3>", unsafe_allow_html=True)
             
             # Hiển thị xác suất
             st.write(f"Xác suất HAM: {probability[0]:.2%}")
