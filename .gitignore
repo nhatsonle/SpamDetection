@@ -14,8 +14,7 @@ Data Science from Scratch- First Principles with Python.pdf
 
 
 # Kết quả tạm/lớn
-results/trained_models/*.pkl
-results/trained_models/*.joblib
+
 
 # Hệ điều hành
 .DS_Store
