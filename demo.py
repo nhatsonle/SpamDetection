@@ -6,7 +6,7 @@ from src.preprocess import clean_text_v1  # Import hàm tiền xử lý của b�
 # 1. Load model và vectorizer
 @st.cache_resource
 def load_model():
-    model = joblib.load('./results/trained_models/best_svm_model.pkl')
+    model = joblib.load('./results/trained_models/best_random_forest_model.pkl')
     vectorizer = joblib.load('./results/trained_models/tfidf_vectorizer.pkl')
     return model, vectorizer
 
