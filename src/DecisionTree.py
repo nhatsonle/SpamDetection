@@ -190,7 +190,7 @@ print("\nĐã huấn luyện xong mô hình Decision Tree.")
 y_pred_dtree = dtree_model.predict(X_test_tfidf)
 
 # Đánh giá ban đầu
-print("\nKết quả đánh giá Decision Tree (Baseline):")
+print("\nKết quả đánh giá Decision Tree (Entropy):")
 print("Accuracy:", accuracy_score(y_test, y_pred_dtree))
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred_dtree))
 print("\nClassification Report:\n", classification_report(y_test, y_pred_dtree, target_names=['ham', 'spam']))
@@ -199,6 +199,7 @@ print("\nClassification Report:\n", classification_report(y_test, y_pred_dtree, 
 # y_pred_proba_dtree = dtree_model.predict_proba(X_test_tfidf)
 # print("\nXác suất dự đoán cho 5 mẫu đầu tiên:\n", y_pred_proba_dtree[:5])
 
+# Vẽ cây quyết định với max_depth = 3 để minh hoạ cho việc phân nhanh của cây
 from sklearn import tree
 fig = plt.figure(figsize=(10,5))
 
@@ -249,7 +250,7 @@ print("\nĐã huấn luyện xong mô hình Decision Tree.")
 y_pred_dtree = dtree_model.predict(X_test_tfidf)
 
 # Đánh giá ban đầu
-print("\nKết quả đánh giá Decision Tree (Baseline):")
+print("\nKết quả đánh giá Decision Tree (Gini Index):")
 print("Accuracy:", accuracy_score(y_test, y_pred_dtree))
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred_dtree))
 print("\nClassification Report:\n", classification_report(y_test, y_pred_dtree, target_names=['ham', 'spam']))
@@ -258,6 +259,7 @@ print("\nClassification Report:\n", classification_report(y_test, y_pred_dtree, 
 # y_pred_proba_dtree = dtree_model.predict_proba(X_test_tfidf)
 # print("\nXác suất dự đoán cho 5 mẫu đầu tiên:\n", y_pred_proba_dtree[:5])
 
+# Vẽ cây quyết định với max_depth = 3 để minh hoạ cho việc phân nhanh của cây
 from sklearn import tree
 fig = plt.figure(figsize=(10,5))
 
