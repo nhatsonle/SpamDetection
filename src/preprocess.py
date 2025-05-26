@@ -24,7 +24,7 @@ def clean_text_v1(text):
     text = text.lower()
 
     # 2. Xóa ký tự không mong muốn
-    text = re.sub(r'[^a-z\s]', '', text)
+    text = re.sub(r'[^a-z0-9\s@#$%]', '', text)
     # Xóa khoảng trắng thừa
     text = re.sub(r'\s+', ' ', text).strip()
 
@@ -39,4 +39,34 @@ def clean_text_v1(text):
 
     return cleaned_text
 
-# Bạn có thể thêm các hàm khác ở đây nếu cần (ví dụ: lemmatization)
+def clean_text_v2(text):
+    """
+    Pipeline tiền xử lý v2 với cải tiến:
+    - Giữ lại số và ký tự đặc biệt quan trọng
+    - Sử dụng word_tokenize thay vì split
+    - Custom stop words list
+    - Thêm lemmatization để chuẩn hóa từ
+    """
+    # 1. Chuyển chữ thường
+    text = text.lower()
+    
+    # 2. Giữ lại số và ký tự đặc biệt quan trọng
+    text = re.sub(r'[^a-z0-9\s@#$%]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    
+    # 3. Tokenize tốt hơn
+    from nltk.tokenize import word_tokenize
+    tokens = word_tokenize(text)
+    
+    # 4. Custom stop words
+    custom_stop_words = stop_words - {'not', 'no', 'never'}
+    tokens = [word for word in tokens if word not in custom_stop_words]
+    
+    # 5. Thêm lemmatization
+    from nltk.stem import WordNetLemmatizer
+    lemmatizer = WordNetLemmatizer()
+    tokens = [lemmatizer.lemmatize(word) for word in tokens]
+    
+    return " ".join(tokens)
+
+print(stop_words)
