@@ -59,7 +59,7 @@ def clean_text_v2(text):
     tokens = word_tokenize(text)
     
     # 4. Custom stop words
-    custom_stop_words = stop_words - {'not', 'no', 'never'}
+    custom_stop_words = stop_words - {'not', 'no', 'never', 'now', 'only'}
     tokens = [word for word in tokens if word not in custom_stop_words]
     
     # 5. Thêm lemmatization
@@ -69,4 +69,3 @@ def clean_text_v2(text):
     
     return " ".join(tokens)
 
-print(stop_words)
