@@ -3,6 +3,10 @@ import nltk
 # Đảm bảo đã tải stopwords: nltk.download('stopwords')
 from nltk.corpus import stopwords
 
+import pandas as pd 
+
+dataFrame = pd.read_csv(r"C:\Users\HP\Downloads\SpamDetection\data\raw\spam.csv")
+
 # Khởi tạo danh sách stop words một lần
 try:
     stop_words = set(stopwords.words('english'))
@@ -40,3 +44,6 @@ def clean_text_v1(text):
     return cleaned_text
 
 # Bạn có thể thêm các hàm khác ở đây nếu cần (ví dụ: lemmatization)
+
+print(dataFrame['Message'].apply(clean_text_v1))
+# print(clean_text_v1(dataFrame.apply()))
